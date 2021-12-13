@@ -72,16 +72,16 @@ const operators = document.getElementsByClassName("operators");
 for (let operands of operators) {
     operands.addEventListener('click', function(){
         if (storedNum === ""){ //Checks to see if stored value is empty, if it is puts the current value into it to be used later
-        storedNum = parseFloat(firstNum);
-        operand = operands.value;
-        firstNum = "";
-        onePointValue = false;
-        console.log("Operand if conditional triggered.");
-        } else if (storedNum > 0.0000000000001) { //stored value exists, it is kept and we put new values into firstNum variable
-        operand = operands.value;
-        firstNum = "";     
-        onePointValue = false;   
-        console.log("Operand event listener else conditional.");
+            storedNum = parseFloat(firstNum);
+            operand = operands.value;
+            firstNum = "";
+            onePointValue = false;
+            console.log("Operand if conditional triggered.");
+        } else if (typeof(storedNum) == "number") { //stored value exists, it is kept and we put new values into firstNum variable
+            operand = operands.value;
+            firstNum = "";     
+            onePointValue = false;   
+            console.log("Operand event listener else conditional.");
         }
     })
 }
@@ -142,6 +142,7 @@ equals.addEventListener("click", function(){
 //Get random button element
 const random = document.getElementById('random');
 const topButtons = document.getElementsByClassName('top-buttons');
+
 //Select all buttons
 
 const allButtons = document.querySelectorAll('button');
