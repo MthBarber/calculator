@@ -27,10 +27,10 @@ const numFloat = document.getElementById('point');
 
 numFloat.addEventListener('click', function () {
     if (onePointValue == false){
-        firstNum += numFloat.value;
+        firstNum += numFloat.value; //add the . to the variable
         onePointValue = true;
         return document.getElementById("screen").innerHTML = firstNum; 
-    }else if (onePointValue == true) {        
+    }else if (onePointValue == true) {   //prevents more than 1 . value in the variable     
         return document.getElementById("screen").innerHTML = firstNum;
     }
 
